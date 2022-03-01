@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>page-demo</title>
+    <link rel="stylesheet" href="../css/commmon/reset.css" />
+    <link rel="stylesheet" href="../css/commmon/flexbox.css" />
+    <link rel="stylesheet" href="../css/commmon/index.css" />
+    <link
+      rel="stylesheet"
+      href="../js/lib/element-ui/2.13.2/theme-chalk/index.css"
+    />
+    <link rel="stylesheet" href="../js/lib//hx-ui/1.0.0/index.css" />
+    <link rel="stylesheet" href="../css/page-demo/index.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="app-container">
+        <div class="group-echarts">
+          <div class="echarts">
+            <div class="echarts-top sg-flexbox justify-between">
+              <div class="sg-flexbox v">
+                <p class="echarts-top--title">主体变化趋势</p>
+                <span class="echarts-top--desc"
+                  >2017-2021年 | 食品生产企业存续&新增趋势</span
+                >
+              </div>
+              <span class="echarts-btn" @click="onInitEcharts"
+                >初始化echarts</span
+              >
+            </div>
+            <my-echarts :option="barOptions"> </my-echarts>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="../js/lib/echarts/4.8.0/echarts.min.js"></script>
+  <script src="../js/lib/lodash/4.17.21/lodash.min.js"></script>
+  <script src="../js/lib/vue/2.6.11/vue.min.js"></script>
+  <script src="../js/lib/element-ui/2.13.2/index.js"></script>
+  <script src="../js/lib/hx-ui/1.0.0/index.js"></script>
+  <script src="../js/lib/hx-ui/1.0.0/hooks/index.js"></script>
+  <script src="../js/plugins/my-loading/index.js"></script>
+  <script src="../js/page-demo/page-demo-main.js"></script>
+</html>
