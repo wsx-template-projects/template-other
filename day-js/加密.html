@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>加密</title>
+  </head>
+  <body></body>
+  <script>
+    // let url = "http://new.dianyidian.com/api/v1/red_packet/dyd.action.fairySurvey?token=test_token&ts=1558160975&user_id=8&fairy_id=1"
+    // console.log(md5.hex_md5(url));
+    !(function () {
+      this.token = "test_token";
+      this.generatePostData = function (method, postData) {
+        // let token = this.sessionStorage.getItem("token") || this.token;
+        let o = {
+          token: token,
+          method: method,
+          ts: (Date.now() / 1000).toFixed(0),
+        };
+
+        // 将 token, method, ts 几个属性进行合并
+        let oArr = [];
+        // $.each(o, function (k, v) {
+        //     oArr.push(k + '=' + v);
+        // });
+        for (let i in o) {
+          oArr.push(i + "=" + o[i]);
+        }
+        console.log(oArr);
+        // 处理 post 数据
+        let arr = [];
+        // $.each(postData, function(k, v) {
+        //     console.log(k)
+        //     if($.inArray(k, ['token', 'ts', 'method', 'sign']) < 0) {
+        //         arr.push(k + '=' + v);
+        //         o[k] = v;    // 剔除 token,ts,method,sign 几个属性，加入对象
+        //     }
+        // });
+        for (let i in postData) {
+          console.log(i);
+          if (["token", "ts", "method", "sign"].indexOf(i) == -1) {
+            arr.push(i + "=" + postData[i]);
+            o[i] = postData[i];
+          }
+        }
+        console.log(arr.sort());
+        console.log(oArr.concat(arr.sort()).join("&"));
+        // 加入 sign 字段
+        o["sign"] = md5(oArr.concat(arr.sort()).join("&"));
+        console.log(o);
+        return o;
+      };
+      this.generatePostData("http://new.dianyidian.com/api/v1/red_packet", {
+        token: "123",
+        user_id: "8",
+      });
+    })();
+    // generatePostData("dyd.action.fairySurvey",)
+    // document.write(unescape("%3Cspan id='cnzz_stat_icon_1275871402'%3E%3C/span%3E%3Cscript src='" + "https" + "s96.cnzz.com/z_stat.php%3Fid%3D1275871402' type='text/javascript'%3E%3C/script%3E"));
+
+    function GetUrlParam(paraName) {
+      var url = document.location.toString();
+      var arrObj = url.split("?");
+      if (arrObj.length > 1) {
+        var arrPara = arrObj[1].split("&");
+        var arr;
+        for (var i = 0; i < arrPara.length; i++) {
+          arr = arrPara[i].split("=");
+          if (arr != null && arr[0] == paraName) {
+            return arr[1];
+          }
+        }
+        return "";
+      } else {
+        return "";
+      }
+    }
+
+    var accessToken = GetUrlParam("access_token");
+    var HelpState = GetUrlParam("help_detail");
+  </script>
+</html>

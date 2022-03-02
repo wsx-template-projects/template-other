@@ -1,0 +1,64 @@
+@primary: #409eff;
+@success: #67c23a;
+@info: #909399;
+@warning: #e6a23c;
+@danger: #f56c6c;
+
+.wsx-button {
+    display: inline-block;
+    background: #fff;
+    line-height: 1;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    border: 1px solid #dcdfe6;
+    border-radius: 4px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    cursor: pointer;
+    color: #606266;
+    outline: none;
+    margin: 0;
+    transition: 0.1s;
+    padding: 12px 20px;
+    // -moz-user-select: none;
+    // -webkit-appearance: none;
+    // -webkit-user-select: none;
+    // -ms-user-select: none;
+}
+
+.wsx-button--default {
+    background: #fff;
+    color: #606266;
+    border: 1px solid#dcdfe6;
+}
+
+.wsx-button--primary {
+    background: @primary;
+    color: #fff;
+    border: 1px solid @primary;
+}
+
+.wsx-button--success {
+    background: @success;
+    color: #fff;
+    border: 1px solid @success;
+}
+
+.wsx-button--info {
+    background: @info;
+    color: #fff;
+    border: 1px solid @info;
+}
+
+.wsx-button--warning {
+    background: @warning;
+    color: #fff;
+    border: 1px solid @warning;
+}
+
+.wsx-button--danger {
+    background: @danger;
+    color: #fff;
+    border: 1px solid @danger;
+}

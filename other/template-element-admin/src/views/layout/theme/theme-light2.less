@@ -1,0 +1,153 @@
+// 注意IE中不支持css变量
+.app-wrapper.theme-light2 {
+    --system-menu-background: #fff;
+    --system-menu-text-color: #333;
+    --system-menu-submenu-active-color: #4e7fff;
+    --system-menu-children-background: #f7f7f7;
+    --system-menu-hover-background: #ddd;
+    --system-menu-height: 50px;
+    .app-navbar {
+        .app-container {
+            background-image: linear-gradient(90deg, #0750e4 0%, #45a2ff 85%);
+            color: #fff;
+        }
+    }
+    // 侧边栏
+    .app-sidebar {
+        // 背景色
+        background-color: #fff;
+        box-shadow: 1px 1px 10px 0px rgba(0, 0, 0, 0.3);
+        // top: 0;
+        // z-index: 102;
+
+        .el-scrollbar__view {
+            // 一级菜单
+            > .el-menu {
+                > div {
+                    > a {
+                        .el-menu-item {
+                            background-color: #fff !important;
+                            // font-weight: bold;
+                            &:hover {
+                                background-color: #fff !important;
+                            }
+                        }
+                        .el-menu-item.is-active {
+                            background-color: #fff !important;
+                            color: #2064ef !important;
+                            > .sub-el-icon {
+                                color: #2064ef !important;
+                            }
+                        }
+                    }
+
+                    > .el-submenu {
+                        > .el-submenu__title {
+                            background-color: #fff !important;
+                            // font-weight: bold;
+                            > .el-submenu__icon-arrow {
+                                // display: none;
+                            }
+                        }
+                        &:hover {
+                            background-color: #fff !important;
+                        }
+                        // 二级菜单
+                        > .el-menu {
+                            > div {
+                                > .el-submenu {
+                                    &.is-opened {
+                                        > .el-submenu__title {
+                                            .el-submenu__icon-arrow {
+                                                transform: rotateZ(0deg);
+                                            }
+                                        }
+                                    }
+                                    > .el-submenu__title {
+                                        background-color: #f7f7f7 !important;
+                                    }
+                                    // 三级菜单
+                                    > .el-menu {
+                                        > div {
+                                            > .el-submenu {
+                                                > .el-submenu__title {
+                                                    background-color: #f0f0f0 !important;
+                                                }
+                                                // 四级菜单
+                                                > .el-menu {
+                                                    > div {
+                                                        > .el-submenu {
+                                                            > .el-submenu__title {
+                                                                background-color: #e5e5e5 !important;
+                                                            }
+                                                            // 五级菜单
+                                                            > .el-menu {
+                                                                > div {
+                                                                    > .el-submenu {
+                                                                        > .el-submenu__title {
+                                                                            background-color: #d4d4d4 !important;
+                                                                        }
+                                                                    }
+                                                                    > a {
+                                                                        .el-menu-item {
+                                                                            background-color: #d4d4d4 !important;
+                                                                        }
+                                                                        .el-menu-item.is-active {
+                                                                            background-color: #4e7fff !important;
+                                                                            color: #fff !important;
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                        > a {
+                                                            .el-menu-item {
+                                                                background-color: #e5e5e5 !important;
+                                                            }
+                                                            .el-menu-item.is-active {
+                                                                background-color: #4e7fff !important;
+                                                                color: #fff !important;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                            > a {
+                                                .el-menu-item {
+                                                    background-color: #f0f0f0 !important;
+                                                }
+                                                .el-menu-item.is-active {
+                                                    background-color: #4e7fff !important;
+                                                    color: #fff !important;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                > a {
+                                    .el-menu-item {
+                                        background-color: #f7f7f7 !important;
+                                    }
+                                    .el-menu-item.is-active {
+                                        background-color: #4e7fff !important;
+                                        color: #fff !important;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    > .is-active {
+                        > .el-submenu__title {
+                            background-color: #f3f9ff !important;
+                            color: #2064ef !important;
+                            .sub-el-icon {
+                                color: #2064ef;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

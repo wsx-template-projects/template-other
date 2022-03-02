@@ -1,0 +1,230 @@
+.flexbox {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.fx-wrap {
+  &:extend(.flexbox);
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+// 水平基准线
+// 垂直居上
+.fx-align-start {
+  &:extend(.flexbox);
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+// 垂直居中
+.fx-align-center {
+  &:extend(.flexbox);
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// 垂直居下
+.fx-align-end {
+  &:extend(.flexbox);
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+// 垂直基准线
+// 水平居左
+.fx-justify-start {
+  &:extend(.flexbox);
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+// 水平居右
+.fx-justify-end {
+  &:extend(.flexbox);
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+// 水平居中
+.fx-justify-center {
+  &:extend(.flexbox);
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+// 水平两端对齐
+.fx-space-between {
+  &:extend(.flexbox);
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+// 水平均匀分布
+.fx-space-around {
+  &:extend(.flexbox);
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+// 水平垂直居中
+.fx-center {
+  &:extend(.flexbox);
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+// 水平居左垂直居中
+.fx-flex-start-center {
+  &:extend(.flexbox);
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// 水平居右垂直居中
+.fx-flex-end-center {
+  &:extend(.flexbox);
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// 水平两端对齐垂直居中
+.fx-space-between-center {
+  &:extend(.flexbox);
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// 水平两端对齐垂直居上
+.fx-space-between-start {
+  &:extend(.flexbox);
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+}
+
+// 水平两端对齐垂直居下
+.fx-space-between-end {
+  &:extend(.flexbox);
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: flex-end;
+  align-items: flex-end;
+}
+
+//定义垂直方向 column
+.fx-column {
+  &:extend(.flexbox);
+  flex-direction: column;
+  -webkit-flex-direction: column;
+}
+
+// column排列 flex_start
+.fx-column-start {
+  &:extend(.fx-column);
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+}
+
+// column排列 flex_end
+.fx-column-end {
+  &:extend(.fx-column);
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+
+//column align-items: center
+.fx-column-align-center {
+  &:extend(.fx-column);
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+//column排列垂直居中
+.fx-column-align-start-center {
+  &:extend(.fx-column);
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+//column排列垂直水平居中
+.fx-column-center {
+  &:extend(.fx-column);
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+// column排列 两端对齐
+.fx-column-space-between {
+  &:extend(.fx-column);
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+}
+
+// column排列 两端对齐水平居中
+.fx-column-space-between-center {
+  &:extend(.fx-column);
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+// column排列 均匀分布
+.fx-column-space-around {
+  &:extend(.fx-column);
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+}
+
+// .fx-wrap {
+//   &:extend(.flexbox);
+//   -webkit-flex-wrap: wrap;
+//   flex-wrap: wrap;
+// }
+
+.flex1 {
+  flex: 1;
+  -webkit-flex: 1;
+}
+.flex2 {
+  flex: 2;
+  -webkit-flex: 2;
+}
+.flex3 {
+  flex: 3;
+  -webkit-flex: 3;
+}
+.flex4 {
+  flex: 4;
+  -webkit-flex: 4;
+}
+.flex5 {
+  flex: 5;
+  -webkit-flex: 5;
+}
+.flex6 {
+  flex: 6;
+  -webkit-flex: 6;
+}
+.flex7 {
+  flex: 7;
+  -webkit-flex: 7;
+}
+.flex8 {
+  flex: 8;
+  -webkit-flex: 8;
+}

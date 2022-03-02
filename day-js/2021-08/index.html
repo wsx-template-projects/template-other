@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>每日js</title>
+    <link rel="stylesheet" href="../style/global.css" />
+    <style>
+      .wsx-page {
+        padding: 20px;
+      }
+      .page-operate {
+        display: flex;
+      }
+      .page-view {
+        padding: 20px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wsx-page">
+      <h2 class="title">2021/9/12(每日js)</h2>
+      <div class="main">
+        <div class="page-operate"></div>
+        <div class="page-view">page-views，暂未开始...</div>
+      </div>
+    </div>
+  </body>
+  <script>
+    window.onload = function () {
+      let btn_titles = ["day12-Math对象", "day13-Date对象"];
+      let html_src_list = [
+        "./html/js之Math对象解析.html",
+        "./html/js之Date对象解析.html",
+      ];
+      let pageOperateEl = document.querySelector(".page-operate");
+      for (let i = 0; i < btn_titles.length; i++) {
+        let btnEl = document.createElement("span");
+        btnEl.className = "wsx-btn";
+        btnEl.classList.add("wsx-btn-primary");
+        btnEl.classList.add("m-r-10");
+        btnEl.innerHTML = btn_titles[i];
+        btnEl.onclick = function () {
+          window.location.href = html_src_list[i];
+        };
+        pageOperateEl.appendChild(btnEl);
+      }
+    };
+  </script>
+</html>

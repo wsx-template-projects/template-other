@@ -1,0 +1,53 @@
+﻿@using JinFan;
+@using JinFan.Web;
+@using JinFan.Web.Tray;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@model TrayUnbindModel
+@{
+    ViewBag.Title = "拆盘";
+    Layout = MVC.Layout;
+}
+<script src="~/scripts/vue/vue.js"></script>
+<script src="~/scripts/vue/axios.min.js"></script>
+
+<h3>拆盘</h3>
+<div id="app">
+    <div class="text-center" style="width:100%;margin: 0 auto 20px auto;">
+        <label>当前托盘条码：</label>
+        <input type="text" placeholder="请输入条形码" id="barcode" v-model="barcode" v-on:keydown="send"
+            onkeyup="value=value.replace(/\s/g,'')" class="form-control" id="code_input"
+            style="width:300px;display:inline-block;margin-right: 20px;" />
+        <i>{{barcode}}</i>
+        <button class="btn" v-on:click="sendCode">拆盘</button>
+    </div>
+</div>
+
+<script>
+    let app = new Vue({
+        el: "#app",
+        data: {
+            barcode: "",
+        },
+        methods: {
+            send() {
+                let params = { 'barcode': this.barcode }
+                axios
+                    .post('/tray/tray/unbindtray', params, {
+                        headers: {
+                            'Content-Type': 'application/json;charset=UTF-8'
+                        }
+                    })
+                    .then((data) => {
+                        debugger
+                        console.log(data)
+                    })
+            },
+            sendCode() {
+                debugger
+                console.log("barcode  :>> ", this.barcode);
+            },
+        }
+    })
+</script>

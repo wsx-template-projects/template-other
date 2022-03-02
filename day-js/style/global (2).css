@@ -1,0 +1,29 @@
+.wsx-page {
+  padding: 20px;
+}
+
+.wsx-btn {
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
+  border: 1px solid rgb(228, 226, 226);
+  padding: 10px 20px;
+}
+
+.wsx-btn-primary {
+  background: #409eff;
+  color: #fff;
+  border: 1px solid #409eff;
+}
+
+.m-l-10 {
+  margin-left: 10px;
+}
+
+.m-r-10 {
+  margin-right: 10px;
+}
+
+.m-b-10 {
+  margin-bottom: 10px;
+}

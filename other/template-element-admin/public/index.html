@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="renderer" content="webkit" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+        <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
+        <!-- <title><%= webpackConfig.name %></title> -->
+
+        <title><%= htmlWebpackPlugin.options.title %></title>
+
+        <!-- 是用CDN的css文件 -- ejs语法 -->
+        <% for (var i in htmlWebpackPlugin.options.cdn&&htmlWebpackPlugin.options.cdn.css) { %>
+        <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="preload" as="style" />
+        <link href="<%= htmlWebpackPlugin.options.cdn.css[i] %>" rel="stylesheet" />
+        <% } %>
+
+        <!-- 使用CDN的JS文件 -- ejs语法 -->
+        <% for (var i in htmlWebpackPlugin.options.cdn && htmlWebpackPlugin.options.cdn.js) { %>
+        <script type="text/javascript" src="<%= htmlWebpackPlugin.options.cdn.js[i] %>"></script>
+        <% } %>
+        <script>
+            /*@cc_on
+        alert("您正在使用的浏览器版本过低，为了您的最佳体验，请先升级浏览器，或换用其他浏览器，例如Chrome、Edge、Safari");
+        window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href);
+      @*/
+        </script>
+    </head>
+    <body>
+        <div id="app"></div>
+    </body>
+
+    <!-- <script charset="utf-8" src="https://map.qq.com/api/js?v=2.exp&key=SBZBZ-EOW3U-XRSV5-2H36I-7K6EF-ZJBGE"></script>
+    <script src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script> -->
+</html>

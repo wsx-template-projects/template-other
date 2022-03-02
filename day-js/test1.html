@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    function printList(list, delay) {
+      /**
+       * 此处写代码逻辑
+       */
+      const tasks = [];
+      const output = (i) =>
+        new Promise((resolve) => {
+          setTimeout(() => {
+            console.log(list[i]);
+            resolve();
+          }, delay * i);
+        });
+
+      for (var i = 0; i < 5; i++) {
+        let time = 0;
+        const retry = new Promise((resolve) => {
+          time = delay * i;
+          setTimeout(() => {
+            console.log(delay * i);
+            resolve();
+          }, delay * i);
+        });
+        tasks.push(retry);
+      }
+    }
+    printList([1, 2, 3, 4, 5], 5);
+
+    // const tasks = [];
+    // const output = (i) =>
+    //   new Promise((resolve) => {
+    //     setTimeout(() => {
+    //       console.log(new Date(), i);
+    //       resolve();
+    //     }, 5000 * i);
+    //   });
+
+    // for (var i = 0; i < 5; i++) {
+    //   tasks.push(output(i));
+    // }
+    //最后的i的值是在异步全部完成之后
+    // Promise.all(tasks).then(() => {
+    //   setTimeout(() => {
+    //     console.log(new Date(), i);
+    //   }, 1000);
+    // });
+
+    var arr = [];
+    // 给arr连续插入 1，2，3，4，5， 结果= [1,2,3,4,5]
+    // 删除第2个元素，结果 = [1,2,4,5]
+    // 获取数组最后2个元素 = [4,5]
+    arr.push(1);
+    arr.push(2);
+    arr.push(3);
+    arr.push(4);
+    arr.push(5);
+    arr.splice(2, 1);
+    // console.log(arr);
+    let result = arr.slice(-2);
+    // console.log(result);
+    /*
+ 问题：用JavaScript写个冒泡算法实现
+*/
+
+    // function sort(arr) {
+    //   // 请实现函数主题
+    //   for (var i = 0; i < arr.length - 1; i++) {
+    //     console.log("i=" + arr[i]);
+    //     for (var j = 0; j < arr.length - i - 1; j++) {
+    //       console.log("j=" + arr[j]);
+    //       console.log("j+1=" + arr[j + 1]);
+    //       if (arr[j] > arr[j + 1]) {
+    //         //把大的数字放到后面
+    //         var swap = arr[j];
+    //         arr[j] = arr[j + 1];
+    //         arr[j + 1] = swap;
+    //       }
+    //     }
+    //     console.log(arr);
+    //   }
+
+    //   return arr;
+    // }
+
+    // sort([1, 2, 6, 4, 8, 7]);
+
+    // 问题：从一个树状数据结构中，找出值最大的一个节点
+    // 入参格式参考：
+    const sourceTree = {
+      id: "i1",
+      value: 17,
+      left: {
+        id: "i3",
+        value: 83,
+        left: {
+          id: "i4",
+          value: 101,
+        },
+        right: {
+          id: "i9",
+          value: 22,
+        },
+      },
+      right: {
+        id: "i11",
+        value: 26,
+      },
+    };
+    // 出参格式参考：
+    const maxNode = {
+      id: "i4",
+      value: 101,
+    };
+
+    function findMaxNode(tree) {
+      let result = "";
+      /**
+       * 此处写代码逻辑
+       */
+      for (let i in tree) {
+        // console.log(i);
+      }
+    }
+    findMaxNode(sourceTree);
+
+    /*
+ 问题：用正则表达式从字符串 123ABC456ABC 中取出数字串
+*/
+
+    function reg(str) {
+      // 请实现函数主体
+      return str.match(/\d/g);
+    }
+
+    const str = reg("123ABC456ABC"); // [123,456]
+    // console.log(str);
+
+    var url =
+      "https://pd.alipay.com/#/product/productHome?catalogCode=GC&tabKey=GOC&roleType=GOC";
+
+    function parseQueryString(url) {
+      // your code here
+      const search = url.substring(url.lastIndexOf("?") + 1);
+      console.log(search);
+      const obj = {};
+      const reg = /([^?&=]+)=([^?&=]*)/g;
+      search.replace(reg, (rs, $1, $2) => {
+        console.log($1, $2, rs);
+        obj[$1] = String($2);
+        return rs;
+      });
+      return obj;
+    }
+
+    var paramObj = parseQueryString(url);
+    console.log(paramObj);
+
+    // 顺序打印一个列表，两次打印间需要有时间间隔
+    // 入参格式参考：list = [1, 2, 3, 4]  delay = 5
+    // 控制台输出情况：
+    // > 1
+    // （过了 5 秒）
+    // > 2
+    // （过了 5 秒）
+    // > 3
+    // （过了 5 秒）
+    // > 4
+
+    // function printList(list, delay) {
+    //   let time = 0;
+    //   /**
+    //    * 此处写代码逻辑
+    //    */
+    //   for (let i = 0; i < list.length; i++) {
+    //     time = delay * (i + 1);
+    //     // console.log(time);
+    //   }
+    // }
+    // printList([1, 2, 3, 4, 5], 5);
+  </script>
+</html>

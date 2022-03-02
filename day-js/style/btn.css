@@ -1,0 +1,14 @@
+.wsx-btn {
+  background: #fff;
+  color: #000;
+  border-radius: 4px;
+  border: 1px solid rgb(228, 226, 226);
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.wsx-btn-primary {
+  background: #409eff;
+  color: #fff;
+  border: 1px solid #409eff;
+}

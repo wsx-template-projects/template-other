@@ -1,0 +1,33 @@
+.flexbox {
+  display: -webkit-box-;
+  display: -webkit-flex-;
+  display: flex;
+}
+
+.fx-colum-justify-between {
+  &:extend(.flexbox);
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.fx-justify-between {
+  &:extend(.flexbox);
+  justify-content: space-between;
+}
+
+.fx-between-align-center {
+  &:extend(.flexbox);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fx-center {
+  &:extend(.flexbox);
+  justify-content: center;
+  align-items: center;
+}
+
+
+.flex1 {
+  flex:1;
+}
