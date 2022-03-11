@@ -98,4 +98,10 @@ const MyEchartsComponents = {
   },
 };
 
-Vue.component("my-echarts", MyEchartsComponents);
+const MyEcharts = {
+  install: function (Vue, options = {}) {
+    Vue.component("my-echarts", MyEchartsComponents);
+  },
+};
+
+Vue.use(MyEcharts);
