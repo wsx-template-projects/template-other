@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>活力指数专题分析</title>
+    <!-- cdn引入normalize.css -->
+   <!-- <link
+      rel="stylesheet"
+      href="https://yarnpkg.com/en/package/normalize.css"
+    />-->
+    <link rel="stylesheet" href="./css/global/reset.css" />
+    <link
+      rel="stylesheet"
+      href="./js/npm/element-ui/2.13.2/theme-chalk/index.css"
+    />
+    <!-- element-ui cdn引入样式 -->
+    <!-- <link
+      rel="stylesheet"
+      href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
+    /> -->
+    <link rel="stylesheet" href="./css/global/flexbox.css" />
+    <link rel="stylesheet" href="./css/modules/vital-exponent.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="box">
+        <!--锚点-->
+        <div class="page-header">
+          <p
+            v-for="(item,index) of btnArr"
+            :key="index"
+            @click="md(index)"
+            :class="i === index ? 'click' : ''"
+          >
+            {{item.text}}
+          </p>
+        </div>
+        <div class="page-main">
+          <!--概览-->
+          <gai-lan
+            class="d_jump mt50"
+            :gl="gl"
+            @callback="changeQyFn"
+          >
+          </gai-lan>
+          <!--创业-->
+          <chuang-ye
+            class="d_jump"
+            :cy="cy"
+          >
+          </chuang-ye>
+          <!--经营-->
+          <jing-ying class="d_jump"></jing-ying>
+          <!--专业-->
+          <zuan-ye class="d_jump"></zuan-ye>
+          <!--人力-->
+          <ren-li class="d_jump"></ren-li>
+          <!--政府-->
+          <zheng-fu class="d_jump"></zheng-fu>
+        </div>
+        <!--<div class="page-footer">page-footer</div>-->
+      </div>
+    </div>
+  </body>
+  <!-- cdn引入 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+  <!-- lodash cdn引入 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.0/dist/echarts.min.js"></script>
+  <script src="./js/npm/vue/2.6.11/vue.min.js"></script>
+  <script src="./js/npm/element-ui/2.13.2/index.js"></script>
+  <!-- element-ui cdn引入组件库 -->
+  <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+  <script src="./js/modules/main.js"></script>
+  <script src="./components/my-echarts/index.js"></script>
+  <script src="./components/dynamic/public.js"></script>
+  <script src="./components/dynamic/gailan.js"></script>
+  <script src="./components/dynamic/chuangye.js"></script>
+  <script src="./components/dynamic/jingying.js"></script>
+  <script src="./components/dynamic/zuanye.js"></script>
+  <script src="./components/dynamic/renli.js"></script>
+  <script src="./components/dynamic/zhengfu.js"></script>
+</html>

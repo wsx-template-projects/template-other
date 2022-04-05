@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>活力指数专题分析</title>
+    <link rel="stylesheet" href="./css/global/reset.css" />
+    <link
+      rel="stylesheet"
+      href="./js/npm/element-ui/2.13.2/theme-chalk/index.css"
+    />
+    <link rel="stylesheet" href="./css/global/flexbox.css" />
+    <link rel="stylesheet" href="./css/modules/vital-exponent.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div class="box">
+        <div class="page-main">
+          <!--创业-->
+          <chuang-ye :info-data="chuangyeData"></chuang-ye>
+          <!--经营-->
+          <jing-ying
+            :info-data="jingyingData"
+            @init="handleInitJingying"
+          ></jing-ying>
+          <!--专业-->
+          <zuan-ye :info-data="zuanyeData"></zuan-ye>
+          <!--人力-->
+          <ren-li :info-data="renliData" @init="handleInitRenli"></ren-li>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="./js/npm/echarts/4.8.0/echarts.min.js"></script>
+  <script src="./js/npm/vue/2.6.11/vue.min.js"></script>
+  <script src="./js/npm/element-ui/2.13.2/index.js"></script>
+  <script src="./js/modules/main.js"></script>
+  <script src="./components/my-echarts/index.js"></script>
+  <script src="./components/dynamic/public.js"></script>
+  <script src="./components/dynamic/chuangye.js"></script>
+  <script src="./components/dynamic/jingying.js"></script>
+  <script src="./components/dynamic/zuanye.js"></script>
+  <script src="./components/dynamic/renli.js"></script>
+</html>
